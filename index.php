@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller WEB1</title>
-    <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
@@ -30,50 +29,56 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">CALCULADORA</h5>
-                <p class="card-text">Módulo para realizar operaciones básicas.</p>
+            <div class="card-body bg-light">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-6">                    
+                        <div class="col-12 col-md-6 bg-dark text-white">
+                            <h5 class="card-title text-primary mt-2">CALCULADORA</h5>
+                            <p class="card-text mb-2">Módulo para realizar operaciones básicas.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 mt-2 bg-dark text-white">                    
                             <form action="index.php" method="POST">
-                                <div class="row mt-5">
-                                    <div class="col">
+                                <div class="row mt-4 justify-content-center">
+                                    <div class="col-10 col-md-5 mb-1">
                                         <input type="number" class="form-control" placeholder="Número 1" name="numero1">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-10 col-md-2 mb-1">
+                                        <select class="form-control" id="operacion" name="operacion">
+                                            <option>+</option>
+                                            <option>-</option>
+                                            <option>x</option>
+                                            <option>÷</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-10 col-md-5">
                                         <input type="number" class="form-control" placeholder="Número 2" name="numero2">
                                     </div>
                                 </div>
-                                <select class="form-control mt-4" id="operacion" name="operacion">
-                                    <option>Sumar</option>
-                                    <option>Restar</option>
-                                    <option>Multiplicar</option>
-                                    <option>Dividir</option>
-                                </select>
-                                <button type="submit" class="btn btn-primary mt-4" name="botonIgual">=</button>
+                                <button type="submit" class="btn btn-outline-primary mt-4 mb-2" name="botonIgual">=</button>
                             </form>
-                            <div class="text-primary mt-2">
+                            <div class="text-light mt-2">
                             <?php if(isset($_POST["botonIgual"])): ?>
                                 <?php 
                                     $numero1 = $_POST["numero1"];
                                     $numero2 = $_POST["numero2"];                  
                                     switch($_POST["operacion"]){
-                                        case "Sumar":
+                                        case "+":
                                             $suma = $numero1 + $numero2; ?>
                                             <h4><?php echo($numero1." + ".$numero2." = ".$suma); ?></h4>                                        
                                         <?php break;
-                                        case "Restar":
+                                        case "-":
                                             $resta = $numero1 - $numero2; ?>
                                             <h4><?php echo($numero1." - ".$numero2." = ".$resta); ?></h4>
                                         <?php break;
-                                        case "Multiplicar":
+                                        case "x":
                                             $multiplicacion = $numero1 * $numero2; ?>
                                             <h4><?php echo($numero1." x ".$numero2." = ".$multiplicacion); ?></h4>
                                         <?php break;
-                                        case "Dividir":
+                                        case "÷":
                                             $division = $numero1 / $numero2; ?>
-                                            <h4><?php echo($numero1." / ".$numero2." = ".$division); ?></h4>
+                                            <h4><?php echo($numero1." ÷ ".$numero2." = ".$division); ?></h4>
                                         <?php break;
                                         }?>
                             <?php endif ?>
@@ -82,7 +87,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>   
     </main>
 
     <footer>

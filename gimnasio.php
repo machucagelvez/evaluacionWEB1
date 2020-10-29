@@ -29,23 +29,28 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">BODYTECH</h5>
-                <p class="card-text">Módulo para calcular el Índice de Masa Corporal (IMC).</p>
-                <p>IMC = Peso / Altura^2</p>
+            <div class="card-body bg-light">
+                
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-12 col-md-4 bg-dark text-white">
+                            <h5 class="card-title text-primary mt-2">GIMNASIO</h5>
+                            <p class="card-text">Módulo para calcular el Índice de Masa Corporal (IMC).</p>
+                            <p>IMC = Peso / Altura^2</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-4 bg-dark mt-2 text-white">
                             <form action="gimnasio.php" method="POST">
-                                <div class="form-group">
+                                <div class="form-group mt-2">
                                     <label for="peso">Peso (kg)</label>
-                                    <input type="number" step=any class="form-control" name="peso" id="peso" placeholder="Introduzca su peso en kilogramos">
+                                    <input type="number" step=any class="form-control" name="peso" id="peso" placeholder="Peso en kilogramos">
                                 </div>
                                 <div class="form-group">
                                     <label for="altura">Altura (m)</label>
-                                    <input type="number" step=any class="form-control" name="altura" id="altura" placeholder="Introduzca su altura en metros">
+                                    <input type="number" step=any class="form-control" name="altura" id="altura" placeholder="Altura en metros">
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-4" name="botonCalcular">Calcular IMC</button>
+                                <button type="submit" class="btn btn-outline-primary mt-2 mb-2" name="botonCalcular">Calcular IMC</button>
                             </form>
                             <div class="mt-2">
                                 <?php if(isset($_POST["botonCalcular"])): ?>

@@ -29,20 +29,28 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">PARES</h5>
-                <p class="card-text">Módulo para calcular números pares.</p>
+            <div class="card-body bg-light">                
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-12 col-md-4 bg-dark text-white">
+                            <h5 class="card-title text-primary mt-2">PARES</h5>
+                            <p class="card-text mb-2">Módulo para calcular números pares.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-4 mt-2 bg-dark text-white">
                             <form action="pares.php" method="POST">
-                                <div class="form-group">
-                                    <label for="cantidad">Cantidad de números pares a calcular</label>
+                                <div class="form-group mt-2">
+                                    <label for="cantidad">Cantidad de números pares a calcular:</label>
                                     <input type="number" class="form-control" name="cantidad" id="cantidad" placeholder="Números de pares">
                                 </div>                                
-                                <button type="submit" class="btn btn-primary mt-4" name="botonCalcular">Calcular</button>
+                                <button type="submit" class="btn btn-outline-primary mt-2 mb-3" name="botonCalcular">Calcular</button>
                             </form>
-                            <div class="mt-2">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-4">                            
+                            <div class="row justify-content-center">
                                 <?php if(isset($_POST["botonCalcular"])): ?>
                                     <?php
                                     $cantidad = $_POST["cantidad"];                                    
@@ -60,7 +68,7 @@
                                         }
                                     }
                                     ?>
-                                    <table class="table table-striped">
+                                    <table class="table table-striped table-dark mt-2">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Decena</th>

@@ -29,20 +29,25 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">SALARIO</h5>
-                <p class="card-text">Módulo para calcular el salario de un empleado.</p>
-                <p>Valor hora: $20.000</p>
-                <p>Valor hora extra: $25.000</p>
+            <div class="card-body bg-light">
+                
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-12 col-md-4 bg-dark text-white">
+                            <h5 class="card-title text-primary mt-2">SALARIO</h5>
+                            <p class="card-text">Módulo para calcular el salario de un empleado.</p>
+                            <p>Valor hora: $20.000</p>
+                            <p>Valor hora extra: $25.000</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-4 mt-2 bg-dark text-white">
                             <form action="salario.php" method="POST">
-                                <div class="form-group">
-                                    <label for="horas">Horas laboradas:</label>
-                                    <input type="number" class="form-control" name="horas" id="horas" placeholder="Introduzca las horas laboradas en la semana">
+                                <div class="form-group mt-2">
+                                    <label for="horas">Horas laboradas en la semana:</label>
+                                    <input type="number" class="form-control" name="horas" id="horas" placeholder="Horas laboradas">
                                 </div>                                
-                                <button type="submit" class="btn btn-primary mt-4" name="botonCalcular">Calcular salario</button>
+                                <button type="submit" class="btn btn-outline-primary mt-2 mb-2" name="botonCalcular">Calcular salario</button>
                             </form>
                             <div class="mt-2">
                                 <?php if(isset($_POST["botonCalcular"])): ?>
